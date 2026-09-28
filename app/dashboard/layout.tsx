@@ -1,6 +1,14 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
 import { Navbar } from "@/components/Navbar";
 
-export default function DashboardLayout({ children }: LayoutProps<"/">) {
+export default async function DashboardLayout({ children }: LayoutProps<"/">) {
+  const cookiesStore = await cookies();
+  const token = cookiesStore.get("pos_auth_token")?.value;
+
+  if (!token) redirect("/login");
+
   return (
     <>
       <main className="space-y-4">

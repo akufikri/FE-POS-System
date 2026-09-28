@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCatalog from "@/components/ProductCatalog";
 import { CounterItemButton } from "@/components/CounterItemButton";
+import { ProductThumbnail } from "@/components/ProductThumbnail";
 
 export default async function Products() {
   const res = await fetch("https://dummyjson.com/products?limit=1");
@@ -12,7 +13,9 @@ export default async function Products() {
         <header>
           <h1 className="text-3xl font-bold">Manajemen Menu Kasir</h1>
         </header>
-
+        <div>
+          <ProductThumbnail />
+        </div>
         <div>
           <ProductCatalog />
         </div>

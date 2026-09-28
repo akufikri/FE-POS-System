@@ -1,0 +1,22 @@
+import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/spinner";
+
+export default function AnalyticsLoading() {
+  return (
+    <>
+      <div className="px-5 w-full mt-5 h-screen">
+        {/* loading with skeleton  */}
+        {/* <Skeleton className="w-64 h-5 rounded-2xl" />
+        <div className="mt-4 space-y-3">
+          <Skeleton className="w-full h-20 rounded-2xl" />
+          <Skeleton className="w-full h-20 rounded-2xl" />
+          <Skeleton className="w-full h-20 rounded-2xl" />
+        </div> */}
+        {/* loading with spinner */}
+        <div className="w-full h-full flex items-center justify-center">
+          <Spinner className="size-5" />
+        </div>
+      </div>
+    </>
+  );
+}
